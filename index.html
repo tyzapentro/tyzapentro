@@ -5,29 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Авторизация</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .error-message {
+      color: red;
+      font-size: 12px;
+      display: none; /* Скрываем сообщения по умолчанию */
+    }
+  </style>
 </head>
 <body>
-  <div class="logo">
-    <img src="logo.jpg" alt="Логотип">
-  <div class="auth-container">
-    <h1>Авторизация</h1>
-    <form id="authForm">
-      <label for="login">Логин</label>
-      <input type="text" id="login" name="login" pattern="[а-яА-Я0-9]{4,10}" required>
+  <main>
+    <!-- Контейнер для картинки -->
+    <div class="image-container">
+      <img src="logo.jpg" alt="Логотип">
+    </div>
+    <div class="auth-container">
+      <h1>Авторизация</h1>
+      <form id="authForm">
+        <div>
+          <label for="login">Логин</label>
+          <input type="text" id="login" name="login" pattern="[а-яА-Я0-9]{4,10}" required>
+          <p id="loginError" class="error-message">Пожалуйста, введите логин.</p>
+        </div>
 
-      <label for="birthdate">Дата рождения:</label>
-      <input type="date" id="birthdate" name="birthdate" min="1950-01-01" max="2023-10-01" required>
+        <div>
+          <label for="birthdate">Дата рождения:</label>
+          <input type="date" id="birthdate" name="birthdate" min="1950-01-01" max="2023-10-01" required>
+          <p id="birthdateError" class="error-message">Пожалуйста, введите дату рождения.</p>
+        </div>
 
-      <label for="gender">Пол:</label>
-      <select id="gender" name="gender" required>
-        <option value="male">Мужской</option>
-        <option value="female">Женский</option>
-      </select>
+        <div>
+          <label for="gender">Пол:</label>
+          <select id="gender" name="gender" required>
+            <option value="">Выберите пол</option>
+            <option value="male">Мужской</option>
+            <option value="female">Женский</option>
+          </select>
+          <p id="genderError" class="error-message">Пожалуйста, выберите пол.</p>
+        </div>
 
-      <button type="submit">Войти</button>
-    </form>
-  </div>
+        <button type="submit">Войти</button>
+      </form>
+    </div>
+  </main>
 
   <script src="auth.js"></script>
+  <script src="common.js"></script>
 </body>
 </html>

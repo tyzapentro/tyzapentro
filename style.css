@@ -1,25 +1,33 @@
-/* Общие стили */
+/* Общие стили для body */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #21aee64f;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh; /* Это гарантирует, что содержимое будет центрировано по высоте */
+  min-height: 100vh; /* Страница занимает всю высоту экрана */
+}
+/* Контейнер для картинки */
+.image-container {
+  text-align: center; /* Центрирует содержимое внутри контейнера */
+  margin-bottom: 20px; /* Отступ снизу */
 }
 
+.image-container img {
+  max-width: 100%; /* Максимальная ширина картинки */
+  height: auto; /* Автоматическая высота */
+  border-radius: 10px; /* Закругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+}
+/* Хедер прижат к верху */
 header {
   background: #283da7;
-  color: rgb(243, 245, 249);
+  color: white;
   padding: 10px 20px;
   display: flex;
-  justify-content: center; /* Центрируем логотип */
+  justify-content: space-between; /* Распределяет элементы */
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* Ограничиваем ширину для центрирования */
   box-sizing: border-box;
 }
 
@@ -50,27 +58,51 @@ header nav ul li a {
 header nav ul li a.active {
   font-weight: bold;
 }
+#userLogin {
+  font-weight: bold;
+  color: rgb(12, 8, 8);
+}
 
+#logout {
+  background: #00e1ff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease; /* Анимация при наведении */
+}
+
+#logout:hover {
+  background: #e65c00; /* Тёмно-оранжевый цвет при наведении */
+}
+
+
+/* Основное содержимое занимает оставшееся пространство */
 main {
-  width: 100%;
-  max-width: 1200px; /* Ограничиваем ширину для центрирования */
+  flex: 1; /* Растягивается на всю доступную высоту */
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
 }
 
+/* Футер прижат к низу */
 footer {
   background: #4d67e8;
   color: white;
   text-align: center;
   padding: 10px 0;
   width: 100%;
-  max-width: 1200px; /* Ограничиваем ширину для центрирования */
   box-sizing: border-box;
-  margin-top: 20px;
 }
   
   /* Форма авторизации */
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none; /* Скрываем по умолчанию */
+  }
   .auth-container {
     max-width: 400px;
     margin: 50px auto;
@@ -204,6 +236,35 @@ footer {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+}
+/* Стили для кнопок */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#checkTest {
+  background-color: #007bff;
+  color: white;
+}
+
+#checkTest:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#resetTest {
+  background-color: #28a745;
+  color: white;
+  display: none; /* Скрываем кнопку "Пройти заново" по умолчанию */
+}
+
+#resetTest:hover {
+  background-color: #218838;
 }
 
 .test-container button {
@@ -415,57 +476,37 @@ footer {
   cursor: pointer;
   font-size: 16px;
   margin-top: 20px;
-  transition: background-color 0.3s ease; /* Анимация при наведении */
+  transition: background-color 0.2s ease; /* Анимация при наведении */
 }
 
 .profile-container button:hover {
   background-color: #0056b3; /* Тёмно-синий цвет при наведении */
 }
-/* Галерея */
+/* Стили для галереи */
 .gallery-container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: #f9f9f9; /* Светло-серый фон */
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
-  border: 1px solid #ddd;
-  animation: fadeIn 0.5s ease-in-out; /* Анимация появления */
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.gallery-container h2 {
   text-align: center;
-  color: #007bff; /* Синий цвет заголовка */
-  margin-bottom: 20px;
-  font-size: 28px;
+  margin-top: 20px;
 }
 
 #slider {
   position: relative;
-  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
-  text-align: center;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
 }
 
 #currentImage {
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.5s ease-in-out; /* Плавный переход */
+}
+
+#imageDescription {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+  font-style: italic;
 }
 
 .slider-button {
@@ -475,8 +516,8 @@ footer {
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 50%;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   transition: background 0.3s ease; /* Анимация при наведении */
@@ -499,4 +540,18 @@ footer {
   font-size: 14px;
   color: #555; /* Серый цвет текста */
   text-align: center;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#currentImage.fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
 }

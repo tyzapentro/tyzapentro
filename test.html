@@ -8,8 +8,11 @@
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="logo.jpg" alt="Логотип">
+    <main>
+      <!-- Контейнер для картинки -->
+      <div class="image-container">
+        <img src="logo.jpg" alt="Логотип">
+      </div>
     <h1>Один дома</h1>
     <nav>
       <ul>
@@ -20,6 +23,10 @@
         <li><a href="profile.html">Личный кабинет</a></li>
       </ul>
     </nav>
+    <div class="user">
+      <span id="userLogin"></span>
+      <button id="logout">Выйти</button>
+    </div>
   </header>
 
   <main>
@@ -32,6 +39,7 @@
         <input type="radio" name="q1" value="Маколей Калкин"> Маколей Калкин<br>
         <input type="radio" name="q1" value="Джеки Чан"> Джеки Чан<br>
         <input type="radio" name="q1" value="Том Хэнкс"> Том Хэнкс<br>
+        <p id="q1Result" class="result"></p> <!-- Результат для вопроса 1 -->
 
         <!-- Вопрос 2: Выбор варианта ответа -->
         <h3>Вопрос 2:</h3>
@@ -39,6 +47,7 @@
         <input type="radio" name="q2" value="Нью-Йорк"> Нью-Йорк<br>
         <input type="radio" name="q2" value="Чикаго"> Чикаго<br>
         <input type="radio" name="q2" value="Лос-Анджелес"> Лос-Анджелес<br>
+        <p id="q2Result" class="result"></p> <!-- Результат для вопроса 2 -->
 
         <!-- Вопрос 3: Выбор варианта ответа -->
         <h3>Вопрос 3:</h3>
@@ -46,34 +55,40 @@
         <input type="radio" name="q3" value="Гарри и Марв"> Гарри и Марв<br>
         <input type="radio" name="q3" value="Джек и Джон"> Джек и Джон<br>
         <input type="radio" name="q3" value="Майк и Том"> Майк и Том<br>
+        <p id="q3Result" class="result"></p> <!-- Результат для вопроса 3 -->
 
         <!-- Вопрос 4: Ввод текста -->
         <h3>Вопрос 4:</h3>
         <p>Как зовут соседа Кевина?</p>
         <input type="text" id="q4" required>
+        <p id="q4Result" class="result"></p> <!-- Результат для вопроса 4 -->
 
         <!-- Вопрос 5: Ввод текста -->
         <h3>Вопрос 5:</h3>
         <p>Какой год выпуска фильма?</p>
         <input type="text" id="q5" required>
+        <p id="q5Result" class="result"></p> <!-- Результат для вопроса 5 -->
 
         <!-- Вопрос 6: Ввод текста -->
         <h3>Вопрос 6:</h3>
         <p>Как зовут сестру Кевина?</p>
         <input type="text" id="q6" required>
+        <p id="q6Result" class="result"></p> <!-- Результат для вопроса 6 -->
 
         <button type="button" id="checkTest">Проверить</button>
         <button type="button" id="resetTest" style="display:none;">Пройти заново</button>
       </form>
       <p id="testResult"></p>
+      <p id="errorMessage" style="color: red; display: none;">Пожалуйста, заполните все поля.</p>
     </div>
   </main>
 
   <footer>
-      <p>Контакты: <a href="https://vk.com/tyzapentro" target="_blank">ВК</a></p>
-      <p>&copy; tyzapentro 2024. Все права защищены.</p>
+    <p>Контакты: <a href="https://vk.com/tyzapentro" target="_blank">ВК</a></p>
+    <p>&copy; tyzapentro 2024. Все права защищены.</p>
   </footer>
 
   <script src="test.js"></script>
+  <script src="common.js"></script>
 </body>
 </html>
