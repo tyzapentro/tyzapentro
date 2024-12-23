@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Словарь</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="Логотип">
+    <h1>Один дома</h1>
+    <nav>
+      <ul>
+        <li><a href="description.html">Описание</a></li>
+        <li><a href="dictionary.html" class="active">Словарь</a></li>
+        <li><a href="gallery.html">Галерея</a></li>
+        <li><a href="test.html">Тест</a></li>
+        <li><a href="profile.html">Личный кабинет</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="dictionary-container">
+      <h2>Словарь</h2>
+      <input type="text" id="search" placeholder="Поиск по словарю" class="search-input">
+      <ul id="dictionary" class="dictionary-list">
+        <li data-description="Кевин Маккаллистер — главный герой фильма.">Кевин</li>
+        <li data-description="Двери — злодеи, пытающиеся ограбить дом Кевина.">Двери</li>
+        <li data-description="Семья Маккаллистеров.">Маккаллистеры</li>
+        <li data-description="Аэропорт, где семья теряет Кевина.">Аэропорт</li>
+        <li data-description="Дом, где происходит действие фильма.">Дом</li>
+        <li data-description="Игрушки, которые Кевин использует для защиты.">Игрушки</li>
+        <li data-description="Ловушки, которые Кевин готовит для грабителей.">Ловушки</li>
+        <li data-description="Страна, куда едет семья Кевина.">Франция</li>
+        <li data-description="Сосед Кевина, который помогает ему.">Сосед</li>
+        <li data-description="Полиция, которая арестовывает грабителей.">Полиция</li>
+      </ul>
+      <div id="description" class="description-box"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Контакты: <a href="https://vk.com/tyzapentro" target="_blank">ВК</a></p>
+    <p>&copy; tyzapentro 2024. Все права защищены.</p>
+</footer>
+
+  <script>
+    const dictionary = document.getElementById('dictionary');
+    const search = document.getElementById('search');
+    const description = document.getElementById('description');
+
+    dictionary.addEventListener('click', (e) => {
+      if (e.target.tagName === 'LI') {
+        description.textContent = e.target.dataset.description;
+      }
+    });
+
+    search.addEventListener('input', () => {
+      const query = search.value.toLowerCase();
+      Array.from(dictionary.children).forEach((item) => {
+        item.style.display = item.textContent.toLowerCase().includes(query) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

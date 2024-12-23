@@ -1,0 +1,502 @@
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #21aee64f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Это гарантирует, что содержимое будет центрировано по высоте */
+}
+
+header {
+  background: #283da7;
+  color: rgb(243, 245, 249);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center; /* Центрируем логотип */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Ограничиваем ширину для центрирования */
+  box-sizing: border-box;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav {
+  margin-left: auto; /* Перемещаем навигацию вправо */
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+header nav ul li a.active {
+  font-weight: bold;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px; /* Ограничиваем ширину для центрирования */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+footer {
+  background: #4d67e8;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  max-width: 1200px; /* Ограничиваем ширину для центрирования */
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+  
+  /* Форма авторизации */
+  .auth-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth-container label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .auth-container input, .auth-container select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .auth-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #283da7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .auth-container button:hover {
+    background-color: #283da7;
+  }
+  
+  /* Слайдер */
+  #slider {
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #currentImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(14, 10, 10, 0.2);
+  }
+  
+  #prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+  
+  #prev:hover, #next:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  #prev {
+    left: 10px;
+  }
+  
+  #next {
+    right: 10px;
+  }
+  
+  #slideIndicator {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #353333;
+  }
+  
+/* Тест */
+.test-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f9f9f9; /* Светло-серый фон */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+  border: 1px solid #ddd;
+  animation: fadeIn 0.5s ease-in-out; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.test-container h2 {
+  text-align: center;
+  color: #007bff; /* Синий цвет заголовка */
+  margin-bottom: 20px;
+}
+
+.test-container h3 {
+  color: #333; /* Тёмно-серый цвет вопросов */
+  margin-top: 20px;
+}
+
+.test-container p {
+  color: #555; /* Серый цвет текста вопросов */
+}
+
+.test-container input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.test-container input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.test-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff; /* Синий цвет кнопки */
+  color: white; /* Белый текст */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease; /* Анимация при наведении */
+}
+
+.test-container button:hover {
+  background-color: #0056b3; /* Тёмно-синий цвет при наведении */
+}
+
+.test-container .result {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out; /* Анимация появления */
+}
+
+.test-container .correct {
+  color: green;
+}
+
+.test-container .incorrect {
+  color: red;
+}
+
+.test-container .result p {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  background: #f0f0f0; /* Светло-серый фон для результатов */
+}
+
+.test-container .result .correct {
+  background: #e6f9e6; /* Светло-зелёный фон для правильных ответов */
+}
+
+.test-container .result .incorrect {
+  background: #ffe6e6; /* Светло-красный фон для неправильных ответов */
+}
+/* Словарь */
+.dictionary-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f9f9f9; /* Светло-серый фон */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+  border: 1px solid #ddd;
+  animation: fadeIn 0.5s ease-in-out; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dictionary-container h2 {
+  text-align: center;
+  color: #007bff; /* Синий цвет заголовка */
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.dictionary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dictionary-list li {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Анимация при наведении */
+  background: #fff; /* Белый фон */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.dictionary-list li:hover {
+  background-color: #007bff; /* Синий фон при наведении */
+  color: white; /* Белый текст при наведении */
+}
+
+.description-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 6px;
+  background: #f0f0f0; /* Светло-серый фон */
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+  font-size: 16px;
+  color: #333; /* Тёмно-серый текст */
+}
+/* Описание */
+.description-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #f9f9f9; /* Светло-серый фон */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+  border: 1px solid #ddd;
+  animation: fadeIn 0.5s ease-in-out; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.description-container h2 {
+  text-align: center;
+  color: #007bff; /* Синий цвет заголовка */
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.description-container p {
+  font-size: 18px;
+  line-height: 1.6; /* Межстрочный интервал */
+  color: #333; /* Тёмно-серый текст */
+  text-align: justify; /* Выравнивание текста по ширине */
+}
+
+.description-container p::first-letter {
+  font-size: 24px; /* Увеличенная первая буква */
+  font-weight: bold;
+  color: #007bff; /* Синий цвет первой буквы */
+}
+/* Личный кабинет */
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f9f9f9; /* Светло-серый фон */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+  border: 1px solid #ddd;
+  animation: fadeIn 0.5s ease-in-out; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-container h2 {
+  text-align: center;
+  color: #007bff; /* Синий цвет заголовка */
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.profile-container p {
+  font-size: 18px;
+  line-height: 1.6; /* Межстрочный интервал */
+  color: #333; /* Тёмно-серый текст */
+  margin-bottom: 15px;
+}
+
+.profile-container p strong {
+  color: #007bff; /* Синий цвет для заголовков */
+}
+
+.profile-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff; /* Синий цвет кнопки */
+  color: white; /* Белый текст */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease; /* Анимация при наведении */
+}
+
+.profile-container button:hover {
+  background-color: #0056b3; /* Тёмно-синий цвет при наведении */
+}
+/* Галерея */
+.gallery-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #f9f9f9; /* Светло-серый фон */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+  border: 1px solid #ddd;
+  animation: fadeIn 0.5s ease-in-out; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-container h2 {
+  text-align: center;
+  color: #007bff; /* Синий цвет заголовка */
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+#slider {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
+#currentImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease; /* Анимация при наведении */
+}
+
+.slider-button:hover {
+  background: rgba(0, 0, 0, 0.8); /* Тёмный фон при наведении */
+}
+
+#prev {
+  left: 10px;
+}
+
+#next {
+  right: 10px;
+}
+
+#slideIndicator {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555; /* Серый цвет текста */
+  text-align: center;
+}

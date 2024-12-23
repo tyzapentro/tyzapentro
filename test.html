@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="Логотип">
+    <h1>Один дома</h1>
+    <nav>
+      <ul>
+        <li><a href="description.html">Описание</a></li>
+        <li><a href="dictionary.html">Словарь</a></li>
+        <li><a href="gallery.html">Галерея</a></li>
+        <li><a href="test.html" class="active">Тест</a></li>
+        <li><a href="profile.html">Личный кабинет</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="test-container">
+      <h2>Тест</h2>
+      <form id="testForm">
+        <!-- Вопрос 1: Выбор варианта ответа -->
+        <h3>Вопрос 1:</h3>
+        <p>Кто сыграл главную роль в фильме "Один дома"?</p>
+        <input type="radio" name="q1" value="Маколей Калкин"> Маколей Калкин<br>
+        <input type="radio" name="q1" value="Джеки Чан"> Джеки Чан<br>
+        <input type="radio" name="q1" value="Том Хэнкс"> Том Хэнкс<br>
+
+        <!-- Вопрос 2: Выбор варианта ответа -->
+        <h3>Вопрос 2:</h3>
+        <p>В каком городе происходит действие фильма?</p>
+        <input type="radio" name="q2" value="Нью-Йорк"> Нью-Йорк<br>
+        <input type="radio" name="q2" value="Чикаго"> Чикаго<br>
+        <input type="radio" name="q2" value="Лос-Анджелес"> Лос-Анджелес<br>
+
+        <!-- Вопрос 3: Выбор варианта ответа -->
+        <h3>Вопрос 3:</h3>
+        <p>Как зовут злодеев?</p>
+        <input type="radio" name="q3" value="Гарри и Марв"> Гарри и Марв<br>
+        <input type="radio" name="q3" value="Джек и Джон"> Джек и Джон<br>
+        <input type="radio" name="q3" value="Майк и Том"> Майк и Том<br>
+
+        <!-- Вопрос 4: Ввод текста -->
+        <h3>Вопрос 4:</h3>
+        <p>Как зовут соседа Кевина?</p>
+        <input type="text" id="q4" required>
+
+        <!-- Вопрос 5: Ввод текста -->
+        <h3>Вопрос 5:</h3>
+        <p>Какой год выпуска фильма?</p>
+        <input type="text" id="q5" required>
+
+        <!-- Вопрос 6: Ввод текста -->
+        <h3>Вопрос 6:</h3>
+        <p>Как зовут сестру Кевина?</p>
+        <input type="text" id="q6" required>
+
+        <button type="button" id="checkTest">Проверить</button>
+        <button type="button" id="resetTest" style="display:none;">Пройти заново</button>
+      </form>
+      <p id="testResult"></p>
+    </div>
+  </main>
+
+  <footer>
+      <p>Контакты: <a href="https://vk.com/tyzapentro" target="_blank">ВК</a></p>
+      <p>&copy; tyzapentro 2024. Все права защищены.</p>
+  </footer>
+
+  <script src="test.js"></script>
+</body>
+</html>
